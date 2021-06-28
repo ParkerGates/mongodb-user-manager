@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style
+            include ./style.css
+        title Mongo Manager
+    body
+        h1(value=id) Edit User:
+        hr
+
+        div.width
+            form(action="/edit", method="POST")
+                div.mTs
+                    label.textlabel(for="firstName") First Name:
+                    input.textinput(value=items.firstName, type="text", name="firstName", autocomplete="off", required)
+
+                div.mTs
+                    label.textlabel(for="lastName") Last Name:
+                    input.textinput(value=items.lastName, type="text", name="lastName", autocomplete="off", required)
+
+                div.mTs
+                    label.textlabel(for="email") Email:
+                    input.textinput(value=items.email, type="text", name="email", autocomplete="off", required)
+
+                div.mTs
+                    label.textlabel(for="age") Age:
+                    input.textinput(value=items.age, type="text", name="age",  autocomplete="off", required)
+
+                div.textC.mTs
+                    input.submit.mT.p10(type="submit", onclick="this.form.submit();this.disabled = true;")
+
+                

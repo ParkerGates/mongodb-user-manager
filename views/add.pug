@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style
+            include ./style.css
+        title Mongo Manager
+    body
+        h1 Add User:
+        hr
+        
+        br
+        a.indexBtn.p10(href="./listing") Back To Listing
+        br
+        br
+        hr
+
+        div.width
+            form(action="/add", method="POST")
+                div.mTs
+                    label.textlabel(for="firstName") First Name:
+                    input.textinput(type="text", name="firstName", autocomplete="off", required)
+
+                div.mTs
+                    label.textlabel(for="lastName") Last Name:
+                    input.textinput(type="text", name="lastName", autocomplete="off", required)
+
+                div.mTs
+                    label.textlabel(for="email") Email:
+                    input.textinput(type="text", name="email", autocomplete="off", required)
+
+                div.mTs
+                    label.textlabel(for="age") Age:
+                    input.textinput(type="text", name="age",  autocomplete="off", required)
+
+                div.textC.mTs
+                    input(type="submit", onclick="this.form.submit();this.disabled = true;").submit.mT.p10

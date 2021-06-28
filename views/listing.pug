@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style
+            include ./style.css
+        title Mongo Manager
+    body 
+        h1 Mongo Manager
+        hr
+        div
+            br
+            a.indexBtn.p20(href="./add") Add User
+            br
+            br
+        hr
+        div 
+            form(action="/listing", method="POST").search
+                label(for="search") Search For:&nbsp;
+                input(type="text", id="search", name="search", autocomplete="off", required)
+                label(for="by") By:&nbsp;
+                select(id="by", name="by")
+                    option(value="firstName") first name 
+                    option(value="lastName") last name
+                label(for="order") Order By Age:&nbsp;
+                select(id="order" name="order")
+                    option(value="ASC") ASC
+                    option(value="DEC") DEC
+                input(type="submit", onclick="this.form.submit();this.disabled = true;")
+        hr
+        table
+            tr 
+                td Id: 
+                td First Name:
+                td Last Name:
+                td Email:
+                td Age:
+                td &nbsp;
+                td &nbsp;
+            each i in itemNum
+                tr            
+                    td= items[i].id
+                    td= items[i].firstName
+                    td= items[i].lastName
+                    td= items[i].email
+                    td= items[i].age
+                    td 
+                        a(href=`./edit/${items[i].id}`) edit
+                    td
+                        a(href=`./delete/${items[i].id}`) delete
+
